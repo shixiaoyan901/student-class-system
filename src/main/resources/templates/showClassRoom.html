@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>班级列表显示</title>
+</head>
+<body>
+<table border="0.5" style="width:600px;">
+    <tr>
+        <th>班级编号</th>
+        <th>班级类型</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="classRoom : ${list}">
+        <td th:text="${classRoom.cid}"></td>
+        <td th:text="${classRoom.kind}"></td>
+        <td>
+            <a th:href="@{/class/findClassRoomById(cid=${classRoom.cid})}">更新班级</a>
+            <a th:href="@{/class/delClassRoom(cid=${classRoom.cid})}">删除班级</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

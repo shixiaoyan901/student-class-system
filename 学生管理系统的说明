@@ -1,0 +1,12 @@
+1、student是用注解的方式查询
+classRoom是用映射文件的方式查询
+2、application启动类要与controller、bean、mappper等包在同级目录下，否则会扫描不到，无法访问地址
+3、sql的映射文件（在resources下ClassRoomMapper.xml）要和接口对应起来，将接口里的方法配置到映射文件里,还需要在.yml里将mybatis的配置文件标注一下
+还需要对数据库信息进行配置。ResultMap、ResultType
+4、@PathVariable是干嘛的
+5、驼峰命名法
+6、一对多查询，需要在实体类里创建对象集合
+7、想要springboot支持jsp，推荐的视图是Thymeleaf
+配置视图：（沿用eclipse的风格）
+(1)在main目录下创建webapp文件夹->WEB-INF->jsp
+(2)修改application.properties(.yml)文件让springmvc支持视图的跳转目录指向为/main/webapp/jsp，配置如下图11所示：

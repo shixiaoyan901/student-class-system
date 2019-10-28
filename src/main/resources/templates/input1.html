@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>添加班级</title>
+</head>
+<body>
+<form th:action="@{/class/addClassRoom}" method="post">
+    <p>
+        班级编号：<input type="text" name="cid"/>
+    </p>
+    <p>
+        班级类型：
+        <select name="kind">
+        <option value ="文科班">文科班</option>
+        <option value ="理科班">理科班</option>
+        <option value ="艺术班">艺术班</option>
+        <option value ="综合班">综合班</option>
+    </select>
+    </p>
+    <input type="submit" value="确定"/><br/>
+
+
+</form>
+</body>
+</html>

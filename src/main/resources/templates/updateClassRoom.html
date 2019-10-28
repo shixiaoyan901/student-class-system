@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>修改班级</title>
+</head>
+<body>
+<form th:action="@{/class/editClassRoom}" method="post">
+    <input type="hidden" name="cid" th:field="${classRoom.cid}"/>
+    班级类型：<input type="text" name="kind" th:field="${classRoom.kind}"/><br/>
+    <input type="submit" value="确定"/><br/>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>一对多查询显示</title>
+</head>
+<body>
+<table border="1" style="width:800px;">
+    <tr>
+        <th>班级编号</th>
+        <th>班级类型</th>
+        <th>学生编号</th>
+        <th>学生姓名</th>
+        <th>学生年龄</th>
+        <th>学生状态</th>
+        <th>学生性别</th>
+    </tr>
+    <tr th:each="student : ${classRoom.studentList}">
+        <td th:text="${classRoom.cid}"></td>
+        <td th:text="${classRoom.kind}"></td>
+        <td th:text="${student.sid}"></td>
+        <td th:text="${student.sname}"></td>
+        <td th:text="${student.age}"></td>
+        <td th:text="${student.state}"></td>
+        <td th:text="${student.sex}"></td>
+    </tr>
+</table>
+</body>
+</html>

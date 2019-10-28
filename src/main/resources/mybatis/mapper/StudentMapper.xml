@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.student_system.mapper.StudentMapper">
+
+    <resultMap id="baseResultMap" type="com.ssm.student_system.bean.Student">
+
+        <result column="sid" property="sid" jdbcType="INTEGER"/>
+        <result column="sname" property="sname" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="cid" property="cid" jdbcType="INTEGER"/>
+        <result column="state" property="state" jdbcType="INTEGER" />
+        <result column="sex" property="sex" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <select id="selectStudentById" resultMap="baseResultMap">
+        select sid,sname,age,cid,state,sex from student where sid = #{value}
+    </select>
+
+    <select id="selectStudentAll" resultMap="baseResultMap">
+        select sid,sname,age,cid,state,sex from student
+    </select>
+
+    <insert id="insertStudent" parameterType="com.ssm.student_system.bean.Student">
+        insert into student(sid,sname,age,cid,state,sex) values (#{sid},#{sname},#{age},#{cid},#{state},#{sex})
+    </insert>
+
+    <update id="updateStudent" parameterType="com.ssm.student_system.bean.Student">
+        update student set sname =#{sname},age =#{age},cid =#{cid}, state =#{state}, sex =#{sex} where sid =#{sid}
+    </update>
+
+    <delete id="deleteStudentById">
+        delete from student where sid = #{value}
+    </delete>
+
+</mapper>
+
